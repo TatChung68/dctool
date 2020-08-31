@@ -1,6 +1,6 @@
 #Main program to test funtions
 import sys, os.path
-from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QMessageBox, QTextEdit, QFileDialog, QInputDialog, QFontDialog, QColorDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QAction, QMessageBox, QTextEdit, QFileDialog, QInputDialog, QFontDialog, QColorDialog, QLabel
 from PyQt5.QtGui import QColor, QIcon, QTextCursor
 from PyQt5.QtCore import Qt, pyqtSlot
 
@@ -14,12 +14,12 @@ class mainWindow(QMainWindow):
         '''
         Initialize the window and display contents to the screen
         '''
-        self.setGeometry(100, 100, 500, 500)
+        self.setGeometry(100, 100, 800, 800)
         self.setWindowTitle('DCR Toolware')
         self.setWindowIcon(QIcon('./image/ava_Ucap.png'))
         # self.dcrWidget()
         self.dcrMenu()
-        
+        self.mainWidget()
         self.show()
 
     # def dcrWidget(self):
@@ -36,14 +36,12 @@ class mainWindow(QMainWindow):
         open_act.triggered.connect(self.openFile)
 
         export_act = QAction(QIcon('./image/export.png'), 'Export', self)
-        export_act.setShortcut('Alt+X')
+        export_act.setShortcut('Ctrl+K')
         #export_act.triggered.connect(self.exportFile)
 
         save_act = QAction(QIcon('./image/save.png'), 'Save', self)
         save_act.setShortcut('Ctrl+S')
         #save_act.triggered.connect(self.exportFile)
-
-
 
         #Create menu bar
         menu_bar = self.menuBar()
@@ -56,6 +54,12 @@ class mainWindow(QMainWindow):
         file_menu.addAction(export_act)
         file_menu.addSeparator()
         file_menu.addAction(save_act)
+        
+    def mainWidget(self):
+        QLabel("Choosen File", self).move(10, 50)
+        name_label = QLabel("dir/file :", self)
+        name_label.move(10, 70)
+
 
 
     def openFile(self):
