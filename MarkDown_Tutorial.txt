@@ -1,0 +1,10 @@
+MarkDown Tutorial 
+
+italic: _word_
+bold: **word**
+both italic and bold: **_word_**
+header: #. to get smaller, use more #
+Linking to other web site: [word](link)
+Display an image: ![](link_image)
+Tab: insert ">" before the first line of paragraph
+Enter the line: Insert 2 spaces after each new line

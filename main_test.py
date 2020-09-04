@@ -65,12 +65,14 @@ class mainWindow(QMainWindow):
     def openFile(self):
         '''
         Choose the file we want to filter
-        '''
+        
         file_name, _ = QFileDialog.getOpenFileName(self, "Open File", 
                                                         "/home", 
                                                         "ALL")
         print(file_name)
-
+        '''
+        dir_ = QFileDialog.getExistingDirectory(None, 'Select a folder:', 'C:\\', QFileDialog.ShowDirsOnly)
+        print(dir_)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
